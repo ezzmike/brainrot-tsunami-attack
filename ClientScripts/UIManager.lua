@@ -14,13 +14,24 @@ screenGui.Name = "MainGui"
 screenGui.Parent = playerGui
 
 -- Money display
+local moneyFrame = Instance.new("Frame")
+moneyFrame.Size = UDim2.new(0, 220, 0, 60)
+moneyFrame.Position = UDim2.new(0, 5, 0, 5)
+moneyFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+moneyFrame.BackgroundTransparency = 0.5
+moneyFrame.BorderSizePixel = 2
+moneyFrame.BorderColor3 = Color3.new(1, 1, 1)
+moneyFrame.Parent = screenGui
+
 local moneyLabel = Instance.new("TextLabel")
-moneyLabel.Size = UDim2.new(0, 200, 0, 50)
-moneyLabel.Position = UDim2.new(0, 10, 0, 10)
+moneyLabel.Size = UDim2.new(1, -10, 1, -10)
+moneyLabel.Position = UDim2.new(0, 5, 0, 5)
 moneyLabel.Text = "Money: 0"
-moneyLabel.BackgroundColor3 = Color3.new(0,0,0)
-moneyLabel.TextColor3 = Color3.new(1,1,1)
-moneyLabel.Parent = screenGui
+moneyLabel.BackgroundTransparency = 1
+moneyLabel.TextColor3 = Color3.new(1, 1, 0)
+moneyLabel.TextScaled = true
+moneyLabel.Font = Enum.Font.SourceSansBold
+moneyLabel.Parent = moneyFrame
 
 -- Tsunami warning
 local warningLabel = Instance.new("TextLabel")
@@ -28,7 +39,10 @@ warningLabel.Size = UDim2.new(1, 0, 0, 100)
 warningLabel.Position = UDim2.new(0, 0, 0.5, -50)
 warningLabel.Text = ""
 warningLabel.BackgroundColor3 = Color3.new(1,0,0)
+warningLabel.BackgroundTransparency = 0.3
 warningLabel.TextColor3 = Color3.new(1,1,1)
+warningLabel.TextScaled = true
+warningLabel.Font = Enum.Font.SourceSansBold
 warningLabel.Visible = false
 warningLabel.Parent = screenGui
 
@@ -53,6 +67,14 @@ TsunamiEvent.OnClientEvent:Connect(function(action, time)
     elseif action == "Earthquake" then
         warningLabel.Text = "Earthquake! Hold on!"
         warningLabel.Visible = true
+        -- Screen shake
+        local camera = Workspace.CurrentCamera
+        local originalCFrame = camera.CFrame
+        for i = 1, 50 do
+            camera.CFrame = originalCFrame * CFrame.new(math.random(-2,2), math.random(-2,2), math.random(-2,2))
+            wait(0.1)
+        end
+        camera.CFrame = originalCFrame
     elseif action == "VolcanoWarning" then
         warningLabel.Text = "Volcano Erupting Soon! " .. time .. " seconds!"
         warningLabel.Visible = true

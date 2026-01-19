@@ -33,3 +33,7 @@ A tycoon game where players collect Brainrots, upgrade them, and survive various
 - More Brainrots spawned (50)
 - Respawning Brainrots
 - Higher offline cap
+- Visual effects: rising water for tsunami, screen shake for earthquake, particles and fog for volcano
+- Enhanced UI with frames and better styling
+- Glowing Brainrots with neon material and lights
+- Dynamic lighting changes during disasters

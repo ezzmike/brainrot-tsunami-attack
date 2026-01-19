@@ -12,7 +12,17 @@ local part = Instance.new("Part")
 part.Size = Vector3.new(2,2,2)
 part.Anchored = true
 part.CanCollide = false
+part.BrickColor = BrickColor.new("Bright green")
+part.Material = Enum.Material.Neon
 part.Parent = brainrotModel
+
+local light = Instance.new("PointLight")
+light.Color = Color3.new(0, 1, 0)
+light.Range = 10
+light.Brightness = 1
+light.Parent = part
+
+brainrotModel.PrimaryPart = part
 brainrotModel.Parent = ReplicatedStorage
 
 local spawnedBrainrots = {}
