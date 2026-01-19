@@ -53,7 +53,7 @@ local function StartTsunami()
         local char = player.Character
         if char and char:FindFirstChild("HumanoidRootPart") then
             local pos = char.HumanoidRootPart.Position
-            if pos.Y < 50 then -- Assume safe above 50
+            if pos.Y < 40 then -- Assume safe above 40
                 -- Kill or penalize
                 char.Humanoid.Health = 0
                 -- Lose some money

@@ -37,7 +37,7 @@ Dive into the **most epic tycoon adventure** on Roblox! Collect glowing Brainrot
 5. **Test & Publish** ✅ Playtest in Studio, fix bugs, then hit Publish! Share the link and watch the chaos unfold! 🎉
 
 ### 💡 Pro Tips for Max Fun!
-- **Safe Spots**: Build high – tsunamis can't touch you above 50 studs! 🏔️
+- **Safe Spots**: Build high – tsunamis can't touch you above 40 studs! 🏔️
 - **Brainrot Strategy**: Upgrade early for massive cash multipliers! 📈
 - **Disaster Dodge**: Watch warnings and RUN! Screen shake means earthquake incoming! 🏃‍♂️
 - **Offline Mode**: Log out during disasters for safe earnings – smart play! 😎
