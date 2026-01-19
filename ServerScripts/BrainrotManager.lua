@@ -25,13 +25,15 @@ local function SpawnBrainrot(position)
 end
 
 -- Spawn some initial Brainrots
-for i = 1, 10 do
-    SpawnBrainrot(Vector3.new(math.random(-100,100), 5, math.random(-100,100)))
+for i = 1, 50 do
+    SpawnBrainrot(Vector3.new(math.random(-200,200), 5, math.random(-200,200)))
 end
 
 CollectBrainrotEvent.OnServerEvent:Connect(function(player, brainrot)
     if brainrot and brainrot:IsDescendantOf(Workspace) then
         brainrot:Destroy()
+        -- Respawn a new one
+        SpawnBrainrot(Vector3.new(math.random(-200,200), 5, math.random(-200,200)))
         -- Add to player's data
         local playerData = require(script.Parent.PlayerManager).playerData[player.UserId]
         table.insert(playerData.Brainrots, {Level = 1})

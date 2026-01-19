@@ -14,7 +14,7 @@ CollectBrainrotEvent.Name = "CollectBrainrotEvent"
 CollectBrainrotEvent.Parent = ReplicatedStorage
 
 -- Tsunami settings
-local TSUNAMI_INTERVAL = 300 -- 5 minutes
+local TSUNAMI_INTERVAL = 120 -- 2 minutes
 local WARNING_TIME = 30 -- 30 seconds warning
 
 -- Function to start tsunami
@@ -50,7 +50,7 @@ end
 
 -- Loop disasters
 while true do
-    wait(math.random(200, 600)) -- Random interval
+    wait(math.random(60, 180)) -- Random interval 1-3 minutes
     local disaster = math.random(1,3)
     if disaster == 1 then
         StartTsunami()

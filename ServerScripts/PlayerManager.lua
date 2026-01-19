@@ -52,9 +52,9 @@ end
 local function CalculateOfflineEarnings(data, timeDiff)
     local totalEarnings = 0
     for _, brainrot in pairs(data.Brainrots) do
-        totalEarnings = totalEarnings + (brainrot.Level * 10) * timeDiff / 60 -- per minute
+        totalEarnings = totalEarnings + (brainrot.Level * 20) * timeDiff / 60 -- faster offline
     end
-    return math.min(totalEarnings, 100000) -- cap
+    return math.min(totalEarnings, 500000) -- higher cap
 end
 
 Players.PlayerAdded:Connect(LoadPlayerData)
@@ -66,7 +66,7 @@ while true do
     for userId, data in pairs(playerData) do
         local earnings = 0
         for _, brainrot in pairs(data.Brainrots) do
-            earnings = earnings + brainrot.Level * 1 -- 1 money per second per level
+            earnings = earnings + brainrot.Level * 5 -- 5 money per second per level
         end
         data.Money = data.Money + earnings
         

@@ -27,5 +27,9 @@ A tycoon game where players collect Brainrots, upgrade them, and survive various
 - Offline earnings calculation
 - Leaderboards
 - Better UI
-- Random disaster intervals
-- Penalty for not escaping disasters
+- Random disaster intervals (1-3 minutes)
+- Faster money generation (5x)
+- Cheaper upgrades
+- More Brainrots spawned (50)
+- Respawning Brainrots
+- Higher offline cap
